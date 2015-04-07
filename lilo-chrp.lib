@@ -649,7 +649,7 @@ function running_on_chrp () {
 					YAST_IS_RUNNING=1 parted_call $boot_device resize $boot_partnr $start $end &&
 					parted_call $boot_device set $boot_partnr type 0x41; ) >& $TEMP/parted.log
 				then
-					error "$resize_errmsg" 11
+					warning "$resize_errmsg" 11
 				fi
 			fi
 
